@@ -11,6 +11,17 @@
   </head>
 
   <body>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container d-flex justify-content-between">
+        <a class="navbar-brand p-0" href="#">
+          <%= image_tag 'logo.png', alt: 'Logo', width: 60 %>
+        </a>
+        <div class="d-flex gap-4">
+          <%= link_to "My lists", lists_path, class: "text-decoration-none text-dark" %>
+          <%= link_to "New list", new_list_path, class: "text-decoration-none text-dark" %>
+        </div>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>

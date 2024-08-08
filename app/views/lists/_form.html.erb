@@ -1,0 +1,5 @@
+<%= simple_form_for(list) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :movies, as: :check_boxes, collection: movies %>
+  <%= f.submit class: "btn btn-dark rounded-pill" %>
+<% end %>
