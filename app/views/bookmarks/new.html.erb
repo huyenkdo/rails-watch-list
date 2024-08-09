@@ -1,2 +1,6 @@
-<h1>Bookmarks#new</h1>
-<p>Find me in app/views/bookmarks/new.html.erb</p>
+<div class="row justify-content-center bg-body my-5">
+  <div class="col-6">
+    <h1 class="fs-4 mb-4">Add a new movie to <%= @list.name %></h1>
+    <%= render "form", list: @list, bookmark: @bookmark, movies: @movies %>
+  </div>
+</div>
