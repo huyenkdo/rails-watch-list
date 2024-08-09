@@ -17,7 +17,6 @@ class ListsController < ApplicationController
 
   def create
     @list = List.new(list_params)
-    # @movies_name = params[:list][:movies]
     if @list.save
       redirect_to list_path(@list)
     else
@@ -32,6 +31,6 @@ class ListsController < ApplicationController
   end
 
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :photo)
   end
 end

@@ -11,9 +11,23 @@
 </div>
 <div class="row justify-content-center bg-body mt-5">
   <div class="col-6 d-flex justify-content-between">
-    <div class="list-group list-group-flush">
+
+    <div class="row row-cols-1 row-cols-md-3 g-3">
       <% @lists.each do |list| %>
-        <%= link_to list.name, list_path(list), class: "text-decoration-none list-group-item" %>
+        <div class="col">
+          <%= link_to list_path(list), class: "text-decoration-none" do %>
+            <div class="card shadow-sm">
+              <% if !list.photo.attached? %>
+                <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="default photo">
+              <% else %>
+                <%= cl_image_tag(list.photo.key, {class: "card-img-top"}) %>
+              <% end %>
+              <div class="card-body">
+                <p class="card-text"><%= list.name %></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
       <% end %>
     </div>
   </div>
