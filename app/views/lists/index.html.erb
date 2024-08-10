@@ -20,7 +20,7 @@
               <% if !list.photo.attached? %>
                 <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="default photo">
               <% else %>
-                <%= cl_image_tag(list.photo.key, {class: "card-img-top"}) %>
+                <%= cl_image_tag(list.photo.key, {cloud_name: "did0eciid", class: "card-img-top"}) %>
               <% end %>
               <div class="card-body">
                 <p class="card-text"><%= list.name %></p>
